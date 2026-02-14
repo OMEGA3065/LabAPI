@@ -128,6 +128,21 @@ public class FirearmItem : Item
     public float BaseLength => Base.BaseLength;
 
     /// <summary>
+    /// Gets whether the player is currently reloading this firearm.
+    /// </summary>
+    public bool IsReloading => ReloaderModule.IsReloading;
+    
+    /// <summary>
+    /// Gets whether the player is currently unloading this firearm.
+    /// </summary>
+    public bool IsUnloading => ReloaderModule.IsUnloading;
+    
+    /// <summary>
+    /// Gets whether the player is either reloading or unloading this firearm.
+    /// </summary>
+    public bool IsReloadingOrUnloading => ReloaderModule.IsReloadingOrUnloading;
+    
+    /// <summary>
     /// Gets whether the player can reload this firearm.
     /// </summary>
     public bool CanReload => IReloadUnloadValidatorModule.ValidateReload(Base);
