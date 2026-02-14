@@ -145,12 +145,12 @@ public class FirearmItem : Item
     /// <summary>
     /// Gets whether the player can reload this firearm.
     /// </summary>
-    public bool CanReload => IReloadUnloadValidatorModule.ValidateReload(Base);
+    public bool CanReload => IReloadUnloadValidatorModule.ValidateReload(Base) && !IsReloadingOrUnloading;
 
     /// <summary>
     /// Gets whether the player can unload this firearm.
     /// </summary>
-    public bool CanUnload => IReloadUnloadValidatorModule.ValidateUnload(Base);
+    public bool CanUnload => IReloadUnloadValidatorModule.ValidateUnload(Base) && !IsReloadingOrUnloading;
 
     /// <summary>
     /// Gets the firearm's ammo type.
